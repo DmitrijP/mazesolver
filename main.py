@@ -16,6 +16,7 @@ def main():
 def draw_maze_test(win: Window):
     maze = Maze(Point(10, 10), 10, 10, 50, 50, win)
     maze.draw()
+    maze.solve()
     
 def draw_cells_test(win: Window):
     p1 = Point(10, 10)
