@@ -1,5 +1,6 @@
 from cell import Cell
 from line import Line
+from maze import Maze
 from point import Point
 from window import Window   
     
@@ -7,6 +8,15 @@ from window import Window
 def main():
     win = Window(800, 600)
 
+    #draw_cells_test(win=win)
+    draw_maze_test(win=win)
+    
+    win.wait_for_close()
+
+def draw_maze_test(win: Window):
+    maze = Maze(Point(10, 10), 10, 10, 50, 50, win)
+
+def draw_cells_test(win: Window):
     p1 = Point(10, 10)
     p2 = Point(70, 70)
     cell1 = Cell(p1, p2, win, right_wall=False)
@@ -43,7 +53,5 @@ def main():
     
     #Cell above test
     cell5.draw_move(cell4)
-    
-    win.wait_for_close()
 
 main()
