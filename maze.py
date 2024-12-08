@@ -1,4 +1,5 @@
 
+import time
 from cell import Cell
 from point import Point
 from window import Window
@@ -27,6 +28,7 @@ class Maze:
                 c = Cell(window=self._window, p1=p1, p2=p2)
                 cols.append(c)
                 c.draw()
+                self._animate()
             self._cells.append(cols)
                 
     
@@ -34,4 +36,5 @@ class Maze:
         pass
     
     def _animate(self):
-        pass
+        self._window.redraw()
+        time.sleep(0.03)
