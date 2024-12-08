@@ -42,8 +42,8 @@ class Cell:
         if (self.__p1.y == other.__p1.y and self.__p2.y == other.__p2.y and 
             self.__p1.x < other.__p1.x and self.__p2.x < other.__p2.x):
             cntrY = self.__p1.y + ((self.__p2.y - self.__p1.y) / 2 )
-            strtX = self.__p1.x
-            endX = other.__p2.x
+            strtX = self.__p1.x + ((self.__p2.x - self.__p1.x) / 2 )
+            endX = other.__p2.x - ((other.__p2.x - other.__p1.x) / 2 )
             p1 = Point(strtX, cntrY)
             p2 = Point(endX, cntrY)
             l = Line(p1, p2)
@@ -54,8 +54,8 @@ class Cell:
         if (self.__p1.y == other.__p1.y and self.__p2.y == other.__p2.y and 
             self.__p1.x > other.__p1.x and self.__p2.x > other.__p2.x):
             cntrY = self.__p1.y + ((self.__p2.y - self.__p1.y) / 2 )
-            strtX = self.__p2.x
-            endX = other.__p1.x
+            strtX = self.__p2.x - ((self.__p2.x - self.__p1.x) / 2 )
+            endX = other.__p1.x + ((other.__p2.x - other.__p1.x) / 2 )
             p1 = Point(strtX, cntrY)
             p2 = Point(endX, cntrY)
             l = Line(p1, p2)
@@ -66,8 +66,8 @@ class Cell:
         if (self.__p1.x == other.__p1.x and self.__p2.x == other.__p2.x and 
             self.__p1.y > other.__p1.y and self.__p2.y > other.__p2.y):
             cntrX = self.__p1.x + ((self.__p2.x - self.__p1.x) / 2 )
-            strtY = self.__p2.y
-            endY = other.__p1.y
+            strtY = self.__p2.y - ((self.__p2.y - self.__p1.y) / 2 )
+            endY = other.__p1.y + ((other.__p2.y - other.__p1.y) / 2 )
             p1 = Point(cntrX, strtY)
             p2 = Point(cntrX, endY)
             l = Line(p1, p2)
@@ -78,8 +78,8 @@ class Cell:
         if (self.__p1.x == other.__p1.x and self.__p2.x == other.__p2.x and 
             self.__p1.y < other.__p1.y and self.__p2.y < other.__p2.y):
             cntrX = self.__p1.x + ((self.__p2.x - self.__p1.x) / 2 )
-            strtY = self.__p1.y
-            endY = other.__p2.y
+            strtY = self.__p1.y + ((self.__p2.y - self.__p1.y) / 2 )
+            endY = other.__p2.y - ((other.__p2.y - other.__p1.y) / 2 )
             p1 = Point(cntrX, strtY)
             p2 = Point(cntrX, endY)
             l = Line(p1, p2)
